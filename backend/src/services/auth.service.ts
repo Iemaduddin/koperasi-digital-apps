@@ -1,5 +1,5 @@
 import * as bcrypt from "bcrypt";
-import * as jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import type { Role, User } from "../../generated/prisma/client.js";
 import { env } from "../config/env.js";
 import { prisma } from "../prisma/client.js";
