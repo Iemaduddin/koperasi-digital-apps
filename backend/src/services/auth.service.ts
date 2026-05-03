@@ -83,6 +83,10 @@ export const login = async (
     throw new Error("Invalid credentials");
   }
 
+  if (user.isBlocked) {
+    throw new Error("Akun Anda telah diblokir. Silakan hubungi admin.");
+  }
+
   const isPasswordValid = await bcrypt.compare(input.password, user.password);
   if (!isPasswordValid) {
     throw new Error("Invalid credentials");
